@@ -1,15 +1,31 @@
-package ex1Lista2;
+package ex2Lista2;
 
 public class Main {
     public static void main(String[] args) {
-        Sala sala1 = new Sala("Sala 1 ", 30);
-        Sala sala2 = new Sala("Sala 2", 40);
-        Reserva reserva1 = new Reserva(sala1);
-        Reserva reserva2 = new Reserva("23/07/2025", "Laura", sala2);
+        Livro livro1 = new Livro("Harry Potter", "JK Rollins");
+        Livro livro2 = new Livro("Senhor dos aneis", "Touki");
 
-        reserva2.setAlterarsocilicitante("Manuela");
-        reserva1.gerarResumo();
-        reserva2.gerarResumo();
+        Biblioteca biblioteca = new Biblioteca("Biblioteca da Laura");
+
+        biblioteca.adicionarLivro(livro1);
+        biblioteca.adicionarLivro(livro2);
+
+        Livro buscarLivroPeloTitutlo = biblioteca.buscarLivro("Harry Potter");
+        if (buscarLivroPeloTitutlo != null) {
+            System.out.println(buscarLivroPeloTitutlo.getAutor());
+            System.out.println(buscarLivroPeloTitutlo.getTitulo());
+        } else {
+            System.out.println("Livro não encontrado");
+        }
+
+        System.out.println("--------------------------------------");
+
+        Livro buscarLivroPeloTituloEPeloAutor = biblioteca.buscarLivro("Senhor dos aneis", "Touki");
+        if (buscarLivroPeloTituloEPeloAutor != null) {
+            System.out.println(buscarLivroPeloTituloEPeloAutor.getAutor());
+            System.out.println(buscarLivroPeloTituloEPeloAutor.getTitulo());
+        } else {
+            System.out.println("Livro não encontrado");
+        }
     }
-
 }
