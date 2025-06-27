@@ -1,11 +1,11 @@
-package ex1;
+package ex1Lista2;
 
 public class Sala {
     private String nome;
-    private String capacidade;
+    private int capacidade;
 
-    public Sala (String nome, String capacidade){
-        this.nome= nome;
+    public Sala(String nome, int capacidade) {
+        this.nome = nome;
         this.capacidade = capacidade;
     }
 
@@ -13,7 +13,13 @@ public class Sala {
         return nome;
     }
 
-    public String getCapacidade() {
+    public int getCapacidade() {
         return capacidade;
+    }
+
+    public void exibirinformacoes() {
+        System.out.println("Informações da Sala:");
+        System.out.println("Nome da sala " + nome);
+        System.out.println("Capacidade: " + capacidade);
     }
 }
